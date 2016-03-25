@@ -1,4 +1,4 @@
 {
   "create":true,
-  "app":"common,softPages,wiki"
+  "app":"common,softPages,wiki,exam"
 }

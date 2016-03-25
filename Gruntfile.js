@@ -25,8 +25,8 @@ module.exports = function (grunt) {
 
     //  开发环境静态文件目录
     var DEV_ASSET_DIR = 'assets/',
-        TEM_CSS_DIR = 'sass_dist/';
-
+        TEM_CSS_DIR = 'sass_dist/',
+        DIST_ASSET_DIR = 'dist/';
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -56,6 +56,20 @@ module.exports = function (grunt) {
                     dest: TEM_CSS_DIR,
                     ext: '.css'
                 }]
+            },
+            //Sass发布选择
+            dist: {
+                options: {
+                    style: 'compressed',
+                    sourcemap: 'none'// 不生成.map
+                },
+                files: [{
+                    expand: true,
+                    cwd: DEV_ASSET_DIR,
+                    src: [APP_NAME_STR+'/sass/**/*.scss'],
+                    dest: TEM_CSS_DIR,
+                    ext: '.css'
+                }]
             }
         },
 
@@ -64,12 +78,24 @@ module.exports = function (grunt) {
             // 复制css
             sassToCss: {
                 expand: true,
-                cwd: TEM_CSS_DIR,
-                src: '**/*.css',
-                dest: TEM_CSS_DIR,
+                cwd: TEM_CSS_DIR, //指向的目录是相对的,全称Change Working Directory更改工作目录
+                src: '**/*.css', //指向源文件，**是一个通配符，用来匹配Grunt任何文件
+                dest: TEM_CSS_DIR, //用来输出结果任务
                 options: {
                     process: function(content, srcpath) {
                         grunt.file.write(srcpath.replace('/sass/','/css/').replace(TEM_CSS_DIR,DEV_ASSET_DIR), content);
+                        return false;
+                    }
+                }
+            },
+            outputCss: {
+                expand: true,
+                cwd: TEM_CSS_DIR,
+                src: '**/*.css',
+                dest: DIST_ASSET_DIR,
+                options: {
+                    process: function(content, srcpath) {
+                        grunt.file.write(srcpath.replace('/sass/','/css/').replace(TEM_CSS_DIR,DIST_ASSET_DIR), content);
                         return false;
                     }
                 }
@@ -120,5 +146,13 @@ module.exports = function (grunt) {
         'copy:sassToCss', // copy sass_dis内容到css文件夹
         'clean:sass',// 删除临时由sass生成的sass_dis
         'watch'//
+    ]);
+
+    //创建默认任务
+    grunt.registerTask('dist', [
+        'connect',
+        'sass:dist',// 编译Sass开发设置
+        'copy:outputCss', // copy sass_dis内容到css文件夹
+        'clean:sass'// 删除临时由sass生成的sass_dis
     ]);
 };
