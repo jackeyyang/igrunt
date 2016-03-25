@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import "assets/common/sass/base/globalfun";
+
+//$iconImgUrl: "/assets/wiki/img/icon/";
+
+.wrap-border{
+  border: 1px solid #1e1d18;
+}
+.acc-dialog{
+  padding:0 5px 5px;
+  border: 1px solid #f6f6f6;
+  background: #ddd6c4;
+//  @include opacity(0.9);
+}
+.acc-dialog__header{
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+  .dialog-btn-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.acc-dialog__header__title{
+  font-size: 12px;
+  i{
+    vertical-align: middle;
+  }
+}
+.acc-dialog__body{
+  position: relative;
+  border: 1px solid #5d594e;
+  background: #fff;
+}
+.acc-dialog__footer{
+  padding: 10px;
+  background: #c0c0c0;
+  i{
+    vertical-align: middle;
+  }
+}

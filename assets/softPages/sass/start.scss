@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import "assets/common/sass/base/globalfun";
+
+@import "assets/common/sass/modules/module-menu";
+@import "assets/common/sass/modules/module-side-menu";
+
+/*总账管理*/
+.pos{
+  position: absolute;
+  z-index: $pageIndex;
+}
+.tjpz{
+  top: 50px;
+  left: 50px;
+}
+.arr-01{
+  top: 150px;
+  left: 75px;
+}
+.pzgl{
+  top: 200px;
+  left: 50px;
+}
+.arr-02{
+  top: 220px;
+  left: 150px;
+}
+.group-action-01,.group-action-02,.group-action-03,.group-action-04,
+.gd-group-action-01,.gd-group-action-02,.gd-group-action-03
+{
+  top: 100px;
+  left: 220px;
+  padding: 10px;
+  .link-block{
+    display: block;
+  }
+}
+.arr-03{
+  top: 220px;
+  left: 350px;
+}
+.group-action-02{
+  top: 140px;
+  left: 420px;
+}
+
+/*应收管理&应付管理*/
+.group-action-03{
+  top: 20px;
+  left: 20px;
+}
+.arr-04{
+  top: 105px;
+  left: 150px;
+}
+.djlb{
+  top: 80px;
+  left:200px;
+}
+.arr-05{
+  top: 105px;
+  left:300px;
+}
+.yspz{
+  top: 80px;
+  left:350px;
+}
+
+
+/*工资管理*/
+.createFile{
+  top: 80px;
+  left:20px;
+}
+.group-action-04{
+  top: 20px;
+  left: 200px;
+}
+.arr-gz-01{
+  top:105px;
+  left: 120px;
+}
+.arr-gz-02{
+  top:105px;
+  left: 350px;
+}
+.gzpz{
+  top: 80px;
+  left: 420px;
+}
+
+/*固定资产*/
+.gd-group-action-01{
+  top: 60px;
+  left: 20px;
+}
+.arr-gd-01{
+  top: 150px;
+  left: 200px;
+}
+.gd-group-action-02{
+  top: 20px;
+  left: 290px;
+}
+.arr-gd-02{
+  top: 150px;
+  left: 470px;
+}
+.gd-group-action-03{
+  top: 60px;
+  left: 540px;
+}
+
+/*基础编码*/
+.line-hse{ height: 2px; background: url("/assets/common/img/side-menu/line-hse.jpg") no-repeat;}
+.base-code .link-block{ margin: 15px;}
+.base-code .line-hse{ margin:0 0 0 15px;}

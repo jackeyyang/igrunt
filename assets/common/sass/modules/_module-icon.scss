@@ -1,0 +1,232 @@
+@charset "UTF-8";
+@import "assets/common/sass/base/globalfun";
+
+$iconImgUrl: "/assets/common/img/icon/";
+
+%icon-sprite{
+  background-image: url($iconImgUrl +"icon-sprite.png");
+  background-repeat: no-repeat;
+}
+
+.icon{
+  @extend %icon-sprite;
+  @extend %inline-block;
+}
+.icon-empty{
+  @extend %inline-block;
+  background: none;
+}
+/*icon 尺寸
+每个"icon-xs" icon尺寸为17x17，间隙为10px
+*/
+.icon-xxs{
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+}
+
+.icon-xs{
+  overflow: hidden;
+  width: 17px;
+  height: 17px;
+}
+
+.icon-sm{
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+}
+
+.icon-md{
+  overflow: hidden;
+  width: 57px;
+  height: 57px;
+}
+
+/*结束 icon 尺寸*/
+/*icon-xxs 图标*/
+.icon--circleBlue{
+  background-position: -224px -20px;
+}
+
+.icon--select--arrow{
+  background-position: -224px -30px;
+}
+
+.icon--select--up{
+  background-position: -224px -40px;
+}
+.icon--select--down{
+  background-position: -224px -50px;
+}
+
+.icon--add--xxs{
+  background-position: -224px -70px;
+}
+
+.icon--minu--xxs{
+  background-position: -224px -80px;
+}
+
+.icon--edit--xxs{
+  background-position: -224px -90px;
+}
+
+/*icon-xs 图标*/
+.icon--modify{
+  background-position: 0 0;
+}
+.icon--add{
+  background-position: -27px 0;
+}
+.icon--remove{
+  background-position: -54px 0;
+}
+.icon--refresh{
+  background-position: -81px 0;
+}
+.icon--exit{
+  background-position: -108px 0;
+}
+.icon--data{
+  background-position: -135px 0;
+}
+.icon--right{
+  background-position: -162px 0;
+}
+.icon--pre{
+  background-position: -179px 0;
+}
+.icon--next{
+  background-position: -196px 0;
+}
+.icon--recheck{
+  background-position: -213px 0;
+}
+.icon--cashier{
+  background-position: -106px -20px;
+}
+.icon--reCheckList{
+  background-position: -123px -20px;
+}
+.icon--cancelCheckList{
+  background-position: -140px -20px;
+}
+.icon--light{
+  background-position: -157px -20px;
+}
+.icon--infoCompany{
+  background-position: -174px -20px;
+}
+.icon--adddata{
+  background-position: -190px -20px;
+}
+.icon--hisdata{
+  background-position: -207px -20px;
+}
+.icon--cancelCheckList--dis{
+  background-position: -140px -215px;
+}
+
+.icon--allCancel{
+  background-position: 0 -215px;
+}
+.icon--small-up{
+  background-position: -17px -215px;
+}
+.icon--small-down{
+  background-position: -34px -215px;
+}
+
+.icon--yuan{
+  background-position: -51px -215px;
+}
+.icon--cut{
+  background-position: -68px -215px;
+}
+.icon--pound{
+  background-position: -85px -215px;
+}
+
+.icon--test{
+  background-position: -102px -215px;
+}
+.icon--computer{
+  background-position: -119px -215px;
+}
+.icon--minus--xs{
+  background-position: -157px -215px;
+}
+
+/*icon-sm 图标*/
+.icon--paper{
+  background-position: 0 -42px;
+}
+.icon--excel{
+  background-position: -37px -42px;
+}
+.icon--userLevel{
+  background-position: -74px -42px;
+}
+.icon--rubber{
+  background-position: -111px -42px;
+}
+.icon--userGroup{
+  background-position: -192px -8px;
+}
+.icon--userInfo{
+  background-position: -112px -110px;
+}
+.icon--fileGroup{
+  background-position: -0 -78px;
+}
+.icon--worldFile{
+  background-position: -37px -78px;
+}
+.icon--compareUser{
+  background-position: -74px -78px;
+}
+.icon--arrowDown{
+  background-position: -107px -78px;
+}
+.icon--arrowRight{
+  background-position: -160px -8px;
+}
+.icon--listZ{
+  background-position: -128px -8px;
+}
+.icon--excelToLi{
+  background-position: 0 -110px;
+}
+.icon--paperToLi{
+  background-position: -32px -110px;
+}
+
+
+/*icon-md*/
+.icon--key{
+  background-position: -167px -40px;
+}
+.icon--starbar{
+  background-position: -167px -97px;
+}
+
+
+/* dialog 关闭安按钮*/
+.dialog-btn-close{
+  width: 48px;
+  height: 18px;
+  background-position: 0 -20px;
+  cursor: pointer;
+  &:hover{
+    background-position: -48px -20px;
+  }
+}
+
+/*特别的icon*/
+.icon--file--tree{
+  overflow: hidden;
+  width: 26px;
+  height: 16px;
+  background-position: 0 -199px;
+}

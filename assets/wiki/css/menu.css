@@ -1,0 +1,62 @@
+.menu {
+  zoom: 1;
+  display: inline-block;
+  *display: inline;
+}
+
+.sys-menu {
+  height: 18px;
+  background: url("/assets/common/img/menu/menu-bg.jpg") repeat-x;
+  font-family: "Microsoft Yahei", "Hiragino Sans GB", arial, \5b8b\4f53, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+.menu {
+  position: relative;
+  z-index: 9999;
+  cursor: default;
+}
+.menu .menu__title {
+  padding: 0 7px;
+  line-height: 18px;
+}
+.menu .menu-sub {
+  display: none;
+  position: absolute;
+  padding: 3px;
+  border: 1px solid #979797;
+  background: #f1f1f1 url("/assets/common/img/menu/h-line-bg.jpg") repeat-y 28px 0;
+}
+.menu .v-line {
+  margin-left: 28px;
+}
+.menu .menu-sub__title {
+  display: block;
+  padding: 3px 10px 3px 35px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.menu .menu-sub__title:hover {
+  border: 1px solid #aecff7;
+  background: #e8eff7;
+}
+.menu .disable {
+  color: #6d6d6d;
+}
+
+.header {
+  height: 53px;
+  line-height: 53px;
+  background: url("/assets/common/img/menu/header-bg.jpg") repeat-x;
+}
+.header h1 {
+  margin-left: 30px;
+  font-size: 19px;
+  color: #fff;
+}
+
+.menu:hover .menu__title {
+  background: #a3d1ff;
+}
+.menu:hover .menu-sub {
+  display: block;
+}

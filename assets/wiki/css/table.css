@@ -1,0 +1,88 @@
+@charset "UTF-8";
+table {
+  width: 100%;
+}
+table th, table td, table caption {
+  padding: 8px;
+  vertical-align: top;
+}
+
+.table--border th, .table--accounting th, .table--border td, .table--accounting td, .table--border caption, .table--accounting caption {
+  border: 1px solid #ddd;
+}
+.table--border caption, .table--accounting caption {
+  border-bottom: none;
+}
+
+.table--border tbody tr:hover td, .table--border tfoot tr:hover td {
+  background: #eee;
+}
+
+.td-condensed {
+  padding: 0 !important;
+}
+
+.td-border-none {
+  border: none !important;
+}
+
+/****设计具体的表格****/
+.table--border td, .table--border th {
+  padding: 2px;
+}
+.table--border th {
+  font-weight: normal;
+  background: #efefef;
+  border-color: #000;
+}
+.table--border tbody tr:hover td, .table--border tfoot tr:hover td {
+  color: #fff;
+  background: #3399ff;
+}
+
+.table--accounting th {
+  text-align: center;
+  font-weight: normal;
+}
+.table--accounting tbody {
+  background: #fff;
+}
+.table--accounting tbody .td-condensed:hover {
+  background: #3399ff;
+}
+.table--accounting tbody .td-condensed table {
+  float: right;
+  width: auto;
+  border: 0 !important;
+}
+.table--accounting tbody .td-condensed table tbody {
+  background: none;
+}
+.table--accounting tbody .td-condensed table td {
+  text-align: center;
+  padding: 0 !important;
+  height: 25px;
+  vertical-align: middle;
+  border: none !important;
+  border-left: 1px solid #ddd !important;
+}
+.table--accounting tbody .td-condensed table .green-h {
+  border-left: 1px solid #008040 !important;
+}
+.table--accounting tbody .td-condensed table .red-h {
+  border-left: 1px solid #f00 !important;
+}
+.table--accounting tfoot .td-condensed .footer-des {
+  float: none;
+}
+.table--accounting tfoot .td-condensed .footer-des td {
+  padding: 8px !important;
+  border: none !important;
+  border-left: 1px solid #ddd !important;
+}
+.table--accounting tfoot .td-condensed tbody {
+  background: none;
+}
+.table--accounting tfoot .td-condensed:hover {
+  background: none;
+}

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+@import "assets/common/sass/base/globalfun";
+
+$btnImgUrl: "/assets/common/img/icon/";
+
+
+@mixin btn-icon-sprite{
+  background-image: url($btnImgUrl +"btn-icon-sprite.png")!important;
+  background-repeat: no-repeat;
+}
+
+
+@mixin btn-icon{
+  @include btn-icon-sprite;
+  @extend %inline-block;
+}
+/*icon 尺寸
+每个"icon-xs" icon尺寸为17x17，间隙为10px
+*/
+$iconxsw: 17px;
+.icon-xs{
+  overflow: hidden;
+  width: $iconxsw;
+  height: $iconxsw;
+}
+
+
+/*结束 icon 尺寸*/
+/*icon-xxs 图标*/
+
+/*icon-xs 图标*/
+$btnIcon-list:
+icon--modify,
+icon--add,
+icon--remove,
+icon--refresh,
+icon--exit,
+icon--data,
+icon--right,
+icon--pre,
+icon--next,
+icon--recheck,
+icon--cashier,
+icon--reCheckList,
+icon--cancelCheckList,
+icon--light,
+icon--infoCompany,
+icon--adddata,
+icon--hisdata,
+icon--allCancel,
+icon--small-up,
+icon--small-down,
+icon--yuan,
+icon--cut,
+icon--pound,
+icon--test,
+icon--computer,
+icon--minus--xs
+;
+
+
+/**/
+@each $btnIcon in $btnIcon-list {
+  .#{$btnIcon} {
+    @include btn-icon;
+    background-position: -((index($btnIcon-list,$btnIcon)-1)*$iconxsw) 0;
+  }
+  .#{$btnIcon}--dis {
+    @include btn-icon;
+    background-position: (-(index($btnIcon-list,$btnIcon)-1)*$iconxsw) (-$iconxsw);
+  }
+}
+.disabled{
+  @each $btnIcon in $btnIcon-list {
+    .#{$btnIcon} {
+      @include btn-icon;
+      background-position: (-(index($btnIcon-list,$btnIcon)-1)*$iconxsw) (-$iconxsw);
+    }
+  }
+}

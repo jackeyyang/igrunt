@@ -1,0 +1,155 @@
+@charset "UTF-8";
+@import "assets/common/sass/base/globalfun";
+@import "assets/common/sass/modules/module-table";
+@import "assets/common/sass/modules/module-tab";
+
+$pageImgUrl: "/assets/softPages/img/";
+
+/********记帐凭证**********/
+.info-from--top {
+  padding: 10px;
+}
+
+.acc-dialog__body--gray {
+  padding-bottom: 10px;
+  background: #f2f2f2;
+}
+
+.table-bg-yellow {
+  background: #ffffd7;
+}
+
+.info-wrap--body__left{
+  margin: 0 10px 0;
+  padding: 10px;
+  width: 695px;
+  border: 1px solid #ddd;
+  h1{
+    font-size: 24px;
+    font-family: "Microsoft Yahei", 宋体, arial, sans-serif;
+    font-weight: normal;
+  }
+}
+.info-wrap--body__right{
+  padding: 10px;
+  button{
+    display: block;
+    width: 85px;
+    margin-top: 10px;
+    i{
+      vertical-align: middle;
+    }
+  }
+}
+
+.other-option__top{
+  padding: 10px;
+  .acc-form-control{
+    width: 120px;
+  }
+  .pz-number{
+    width: 80px;
+  }
+  .spec{
+    @extend %inline-block;
+    width: 50px;
+  }
+}
+.other-option__foot{
+  padding: 20px 10px 0;
+  span{
+    @extend %inline-block;
+    width: 130px;
+  }
+}
+
+/****凭证列表****/
+.list-wrap-pingzhen{
+  margin: 10px;
+  height: 430px;
+}
+.action-group--top{
+  padding: 5px;
+  background:#e4e4e4 url($pageImgUrl +"action-top-bg.jpg") repeat-x;
+  a{
+    @extend %inline-block;
+    @extend %btn-over;
+    margin-right: 10px;
+    padding:2px 5px;
+  }
+  i{
+    vertical-align: middle;
+  }
+}
+.search-row{ width: 820px;}
+
+// 期未结帐
+.header-qmjz .icon--excelToLi{
+  margin: 20px 20px 0 20px;
+}
+.header-qmjz--des{
+  padding: 15px 0;
+  line-height: 18px;
+}
+.w316{
+  margin: 10px;
+  width: 315px;
+}
+.body-qmjz--body__list{
+  overflow: auto;
+  height: 230px;
+  border:1px solid #a0a0a0;
+  background: #fff;
+}
+.body-qmjz--body__notice{
+  margin: 10px;
+  width: 205px;
+  border: 1px solid #c0c0c0;
+}
+.qmjz__notice--title{
+  float: left;
+  margin-top: -10px;
+  margin-left: 5px;
+  line-height: 18px;
+  background: #f2f2f2;
+  i{
+    vertical-align: top;
+  }
+}
+.qmjz__notice--con{
+  padding: 10px;
+  line-height: 18px;
+  p{
+    padding-top: 15px;
+    color: #acacac;
+  }
+  span{
+    margin-top: 20px;
+    display: block;
+  }
+}
+
+// 会计科目
+.list-wrap-padding{ padding: 10px;}
+
+// 账套属性
+.info-wrap--body__left--noPadding{
+  margin-right: 10px;
+  padding: 0;
+  width: 510px;
+  .row-long{
+    width: 385px;
+  }
+  select{ width: 150px;}
+}
+.table-form-no-padding td{
+  padding: 3px 0;
+}
+
+// 系统登录
+.login-form{
+  .acc-form-inline label{ width: 60px;}
+  .acc-form-inline input{
+    width: 130px;
+  }
+}

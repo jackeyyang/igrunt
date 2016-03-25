@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import "assets/common/sass/base/globalfun";
+@import "assets/common/sass/base/reset";
+@import "assets/common/sass/base/global-settings";
+
+@import "assets/common/sass/modules/module-dialog";
+@import "assets/common/sass/modules/module-btn-icon";
+@import "assets/common/sass/modules/module-form";
+
+$sideMenuImgUrl: "/assets/common/img/side-menu/";
+$wikiImgUrl: "/assets/common/img/menu/";
+
+.mid-con{}
+.wrap-height{ position: relative; z-index: $domIndex; height: 500px;}
+.side-left{float:left; width: 160px; }
+.side-right{float:right; width: 160px; padding-bottom: 20px;}
+.mid-wrap{
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.v-line{
+  @extend %vline;
+  height: 2px;
+  background: url($wikiImgUrl +"v-line-bg.jpg") repeat-x;
+}
+
+.footer-content{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  border-top: 1px solid #ccc;
+  background: #f2f2f2;
+  span{
+    float: left;
+    height: 20px;
+    padding: 0 10px;
+    border-right: 1px solid #ccc;
+  }
+}
+
+.content-title--short{
+  padding-left: 15px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  background: url($sideMenuImgUrl +"content-title--short.jpg") no-repeat 0 bottom;
+}
+.content-title--long{
+  padding-left: 15px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  background: url($sideMenuImgUrl +"content-title--long.jpg") no-repeat 0 bottom;
+}
+
+.link-block{
+  @extend %inline-block;
+  margin: 10px 0;
+  padding: 5px 15px;
+  text-align: center;
+  font-size: 14px;
+//  width: 85px;
+  border: 1px solid transparent;
+  i{
+    display: block;
+    margin:0 auto 10px;
+  }
+  @extend %btn-over;
+}
+.dashed{ border:1px dashed #0066bb;}
+
+.rec-text--red{
+  @extend %inline-block;
+  border: 1px solid #f00;
+  color: #f00;
+}
+
+.list-wrap{
+  overflow: auto;
+  border:1px solid #a0a0a0;
+  background: #fff;
+}
+
+

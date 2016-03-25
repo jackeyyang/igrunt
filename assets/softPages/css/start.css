@@ -1,0 +1,279 @@
+@charset "UTF-8";
+.menu {
+  zoom: 1;
+  display: inline-block;
+  *display: inline;
+}
+
+.menu {
+  zoom: 1;
+  display: inline-block;
+  *display: inline;
+}
+
+.sys-menu {
+  height: 18px;
+  background: url("/assets/common/img/menu/menu-bg.jpg") repeat-x;
+  font-family: "Microsoft Yahei", "Hiragino Sans GB", arial, \5b8b\4f53, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+.menu {
+  position: relative;
+  z-index: 9999;
+  cursor: default;
+}
+.menu .menu__title {
+  padding: 0 7px;
+  line-height: 18px;
+}
+.menu .menu-sub {
+  display: none;
+  position: absolute;
+  padding: 3px;
+  border: 1px solid #979797;
+  background: #f1f1f1 url("/assets/common/img/menu/h-line-bg.jpg") repeat-y 28px 0;
+}
+.menu .v-line {
+  margin-left: 28px;
+}
+.menu .menu-sub__title {
+  display: block;
+  padding: 3px 10px 3px 35px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.menu .menu-sub__title:hover {
+  border: 1px solid #aecff7;
+  background: #e8eff7;
+}
+.menu .disable {
+  color: #6d6d6d;
+}
+
+.header {
+  height: 53px;
+  line-height: 53px;
+  background: url("/assets/common/img/menu/header-bg.jpg") repeat-x;
+}
+.header h1 {
+  margin-left: 30px;
+  font-size: 19px;
+  color: #fff;
+}
+
+.menu:hover .menu__title {
+  background: #a3d1ff;
+}
+.menu:hover .menu-sub {
+  display: block;
+}
+
+.menu {
+  zoom: 1;
+  display: inline-block;
+  *display: inline;
+}
+
+.wrap-border {
+  border: 1px solid #1e1d18;
+}
+
+.acc-dialog {
+  padding: 0 5px 5px;
+  border: 1px solid #f6f6f6;
+  background: #ddd6c4;
+}
+
+.acc-dialog__header {
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+}
+.acc-dialog__header .dialog-btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.acc-dialog__header__title {
+  font-size: 12px;
+}
+.acc-dialog__header__title i {
+  vertical-align: middle;
+}
+
+.acc-dialog__body {
+  position: relative;
+  border: 1px solid #5d594e;
+  background: #fff;
+}
+
+.acc-dialog__footer {
+  padding: 10px;
+  background: #c0c0c0;
+}
+.acc-dialog__footer i {
+  vertical-align: middle;
+}
+
+.side-menu {
+  padding-left: 2px;
+  padding-bottom: 50px;
+}
+
+.side-menu__list {
+  padding-left: 20px;
+}
+
+.side-menu__list a {
+  display: block;
+  margin: 5px 0;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+}
+.side-menu__list a i {
+  vertical-align: middle;
+}
+.side-menu__list a:hover {
+  color: #0066bb;
+}
+
+/*总账管理*/
+.pos {
+  position: absolute;
+  z-index: 999;
+}
+
+.tjpz {
+  top: 50px;
+  left: 50px;
+}
+
+.arr-01 {
+  top: 150px;
+  left: 75px;
+}
+
+.pzgl {
+  top: 200px;
+  left: 50px;
+}
+
+.arr-02 {
+  top: 220px;
+  left: 150px;
+}
+
+.group-action-01, .group-action-02, .group-action-03, .group-action-04,
+.gd-group-action-01, .gd-group-action-02, .gd-group-action-03 {
+  top: 100px;
+  left: 220px;
+  padding: 10px;
+}
+.group-action-01 .link-block, .group-action-02 .link-block, .group-action-03 .link-block, .group-action-04 .link-block,
+.gd-group-action-01 .link-block, .gd-group-action-02 .link-block, .gd-group-action-03 .link-block {
+  display: block;
+}
+
+.arr-03 {
+  top: 220px;
+  left: 350px;
+}
+
+.group-action-02 {
+  top: 140px;
+  left: 420px;
+}
+
+/*应收管理&应付管理*/
+.group-action-03 {
+  top: 20px;
+  left: 20px;
+}
+
+.arr-04 {
+  top: 105px;
+  left: 150px;
+}
+
+.djlb {
+  top: 80px;
+  left: 200px;
+}
+
+.arr-05 {
+  top: 105px;
+  left: 300px;
+}
+
+.yspz {
+  top: 80px;
+  left: 350px;
+}
+
+/*工资管理*/
+.createFile {
+  top: 80px;
+  left: 20px;
+}
+
+.group-action-04 {
+  top: 20px;
+  left: 200px;
+}
+
+.arr-gz-01 {
+  top: 105px;
+  left: 120px;
+}
+
+.arr-gz-02 {
+  top: 105px;
+  left: 350px;
+}
+
+.gzpz {
+  top: 80px;
+  left: 420px;
+}
+
+/*固定资产*/
+.gd-group-action-01 {
+  top: 60px;
+  left: 20px;
+}
+
+.arr-gd-01 {
+  top: 150px;
+  left: 200px;
+}
+
+.gd-group-action-02 {
+  top: 20px;
+  left: 290px;
+}
+
+.arr-gd-02 {
+  top: 150px;
+  left: 470px;
+}
+
+.gd-group-action-03 {
+  top: 60px;
+  left: 540px;
+}
+
+/*基础编码*/
+.line-hse {
+  height: 2px;
+  background: url("/assets/common/img/side-menu/line-hse.jpg") no-repeat;
+}
+
+.base-code .link-block {
+  margin: 15px;
+}
+
+.base-code .line-hse {
+  margin: 0 0 0 15px;
+}

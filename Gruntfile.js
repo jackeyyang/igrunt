@@ -1,0 +1,124 @@
+'use strict';
+
+module.exports = function (grunt) {
+
+    var config, myConfig;
+    config = require('./config.json');
+    myConfig = require('./myconfig.json');
+
+    //  防止找不到个人配置文件
+    try {
+        myConfig = require('./myconfig.json');
+    }catch(err) {
+        myConfig = {};
+    }
+
+    //  配置文件和个人配置合并
+    for(var key in myConfig) {
+        config[key] = myConfig[key];
+    }
+
+    //  项目名 前后有依赖关系，逗号分隔多个项目
+    var APP_NAME = config.app || 'common',
+    //  兼容多个项目和单个项目的匹配字符
+        APP_NAME_STR = '{'+APP_NAME+', __}';
+
+    //  开发环境静态文件目录
+    var DEV_ASSET_DIR = 'assets/',
+        TEM_CSS_DIR = 'sass_dist/';
+
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        connect: {
+            server: {
+                options: {
+                    // 设置端口号
+                    port: 8000,
+                    hostname: 'localhost',
+                    livereload: true
+                }
+            }
+        },
+
+        //Sass任务
+        sass: {
+            dev: {
+                //Sass开发选项
+                options: {
+                    style: 'expanded',
+                    sourcemap: 'none'// 不生成.map
+                },
+                files: [{
+                    expand: true,
+                    cwd: DEV_ASSET_DIR,
+                    src: [APP_NAME_STR+'/sass/**/*.scss'],
+                    dest: TEM_CSS_DIR,
+                    ext: '.css'
+                }]
+            }
+        },
+
+        //  复制操作
+        copy: {
+            // 复制css
+            sassToCss: {
+                expand: true,
+                cwd: TEM_CSS_DIR,
+                src: '**/*.css',
+                dest: TEM_CSS_DIR,
+                options: {
+                    process: function(content, srcpath) {
+                        grunt.file.write(srcpath.replace('/sass/','/css/').replace(TEM_CSS_DIR,DEV_ASSET_DIR), content);
+                        return false;
+                    }
+                }
+            }
+        },
+
+        //  清除文件
+        clean: {
+            options: {
+                force: true
+            },
+            sass: [TEM_CSS_DIR]
+        },
+
+        // 通过watch实时监听代码变化
+        watch: {
+            sass: {
+                files: [DEV_ASSET_DIR+APP_NAME_STR+'/**/*.scss'],
+                tasks: ['sass:dev', 'copy:sassToCss', 'clean:sass'],
+                options: {
+                    livereload: true
+                }
+            },
+            html: {
+                //监听的文件
+                files: ['pages/'+APP_NAME_STR+'/v/*.html'],
+                options: {
+                    livereload: true
+                }
+            },
+            css: {
+                files: [DEV_ASSET_DIR+APP_NAME_STR+'/**/*.css'],
+                options: {
+                    livereload: true
+                }
+            }
+
+        }
+    });
+
+    // 加载插件
+    require('load-grunt-tasks')(grunt);
+
+    //创建默认任务
+    grunt.registerTask('default', [
+        'connect',
+        'sass:dev',// 编译Sass开发设置
+        'copy:sassToCss', // copy sass_dis内容到css文件夹
+        'clean:sass',// 删除临时由sass生成的sass_dis
+        'watch'//
+    ]);
+};
