@@ -26,7 +26,9 @@ module.exports = function (grunt) {
     //  开发环境静态文件目录
     var DEV_ASSET_DIR = 'assets/',
         TEM_CSS_DIR = 'sass_dist/',
-        DIST_ASSET_DIR = 'dist/';
+        DIST_ASSET_DIR = 'dist/',
+        TEM_TMOD_DIR = 'tmod_temp/',
+        TMOD_DIR = 'tmod/';
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -110,6 +112,16 @@ module.exports = function (grunt) {
             sass: [TEM_CSS_DIR]
         },
 
+        tmod: {
+            template: {
+                src: 'tmod/index.html',
+                dest: 'template.js',
+                options: {
+                    combo: true
+                }
+            }
+        },
+
         // 通过watch实时监听代码变化
         watch: {
             sass: {
@@ -145,6 +157,7 @@ module.exports = function (grunt) {
         'sass:dev',// 编译Sass开发设置
         'copy:sassToCss', // copy sass_dis内容到css文件夹
         'clean:sass',// 删除临时由sass生成的sass_dis
+        'tmod',
         'watch'//
     ]);
 
