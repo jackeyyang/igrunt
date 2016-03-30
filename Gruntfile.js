@@ -114,10 +114,24 @@ module.exports = function (grunt) {
 
         tmod: {
             template: {
-                src: 'tmod/index.html',
-                dest: 'template.js',
+                src: TMOD_DIR + '**/*.tpl',
+                dest: TEM_TMOD_DIR,
                 options: {
-                    combo: true
+                    base: 'tmod/'
+                }
+            }
+        },
+
+        tmodToJs: {
+            expand: true,
+            cwd: TEM_TMOD_DIR,
+            src: '**/*.js',
+            dest: TEM_TMOD_DIR,
+            options: {
+                process: function(content, srcpath) {
+                    var tpath = srcpath.replace(TEM_TMOD_DIR, DEV_ASSET_DIR).replace(/\/tmod\/([^\/].*?)\//, '/$1/tpl/');
+                    grunt.file.write(tpath, content);
+                    return false;
                 }
             }
         },
@@ -157,7 +171,7 @@ module.exports = function (grunt) {
         'sass:dev',// 编译Sass开发设置
         'copy:sassToCss', // copy sass_dis内容到css文件夹
         'clean:sass',// 删除临时由sass生成的sass_dis
-        'tmod',
+        'tmod','tmodToJs',
         'watch'//
     ]);
 
