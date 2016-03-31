@@ -23,10 +23,13 @@ module.exports = function (grunt) {
     //  兼容多个项目和单个项目的匹配字符
         APP_NAME_STR = '{'+APP_NAME+', __}';
 
+
     //  开发环境静态文件目录
     var DEV_ASSET_DIR = 'assets/',
         TEM_CSS_DIR = 'sass_dist/',
         DIST_ASSET_DIR = 'dist/',
+    //  rjs打包输出目录，中间产物
+        REQUIRE_BUILT_DIR = 'require_built/',
         TEM_TMOD_DIR = 'tmod_temp/',
         TMOD_DIR = 'tmod/';
 
@@ -101,6 +104,23 @@ module.exports = function (grunt) {
                         return false;
                     }
                 }
+            },
+            tmodToJs: {
+                expand: true,
+                cwd: TEM_TMOD_DIR,
+                src: '**/*.js',
+                dest: TEM_TMOD_DIR,
+                options: {
+                    process: function(content, srcpath) {
+                        var tpath = srcpath.replace(TEM_TMOD_DIR, DEV_ASSET_DIR).replace(/\/tmod\/([^\/].*?)\//, '/$1/tpl/');
+                        grunt.file.write(tpath, content);
+                        return false;
+                    }
+                }
+            },
+            template: {
+                src: DEV_ASSET_DIR + 'template.js',
+                dest: REQUIRE_BUILT_DIR + 'template.js'
             }
         },
 
@@ -113,25 +133,13 @@ module.exports = function (grunt) {
         },
 
         tmod: {
-            template: {
+            dev: {
                 src: TMOD_DIR + '**/*.tpl',
                 dest: TEM_TMOD_DIR,
                 options: {
-                    base: 'tmod/'
-                }
-            }
-        },
-
-        tmodToJs: {
-            expand: true,
-            cwd: TEM_TMOD_DIR,
-            src: '**/*.js',
-            dest: TEM_TMOD_DIR,
-            options: {
-                process: function(content, srcpath) {
-                    var tpath = srcpath.replace(TEM_TMOD_DIR, DEV_ASSET_DIR).replace(/\/tmod\/([^\/].*?)\//, '/$1/tpl/');
-                    grunt.file.write(tpath, content);
-                    return false;
+                    base: 'tmod/',
+                    combo: false,
+                    runtime: "template.js"
                 }
             }
         },
@@ -171,7 +179,7 @@ module.exports = function (grunt) {
         'sass:dev',// 编译Sass开发设置
         'copy:sassToCss', // copy sass_dis内容到css文件夹
         'clean:sass',// 删除临时由sass生成的sass_dis
-        'tmod','tmodToJs',
+        'tmod','copy:tmodToJs','copy:template',
         'watch'//
     ]);
 

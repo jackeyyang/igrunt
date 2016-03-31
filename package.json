@@ -1,6 +1,9 @@
 {
   "name": "JKDemo",
   "version": "0.0.1",
+  "dependencies": {
+    "tmodjs": "*"
+  },
   "description": "这是我的第一个grunt",
   "author": "jackey",
   "license": "IMMWD",
@@ -14,5 +17,10 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-tmod": "^0.2.10",
     "load-grunt-tasks": "^3.2.0"
+  },
+  "tmodjs-config": {
+    "type": "amd",
+    "combo": false,
+    "minify": false
   }
 }
