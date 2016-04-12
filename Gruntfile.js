@@ -135,12 +135,7 @@ module.exports = function (grunt) {
         tmod: {
             dev: {
                 src: TMOD_DIR + '**/*.tpl',
-                dest: TEM_TMOD_DIR,
-                options: {
-                    base: 'tmod/',
-                    combo: false,
-                    runtime: "template.js"
-                }
+                dest: TEM_TMOD_DIR
             }
         },
 

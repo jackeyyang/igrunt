@@ -21,6 +21,7 @@
   "tmodjs-config": {
     "type": "amd",
     "combo": false,
-    "minify": false
+    "minify": false,
+    "runtime": "template.js"
   }
 }
